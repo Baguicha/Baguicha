@@ -39,7 +39,7 @@
       color: #2b2b2b;
     }
 
-    p {
+    p, li {
       font-size: 1.1em;
       margin: 1em 0;
       line-height: 1.6;
@@ -70,14 +70,27 @@
       text-align: left;
       margin-top: 40px;
       padding: 0 10px;
+      display: block;
     }
 
-    .sessions p, .disclaimer p {
+    .sessions p, .disclaimer p, .contact p {
       margin: 8px 0;
     }
 
-    .contact p {
-      margin: 6px 0;
+    .language-switch {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .language-switch a {
+      margin-left: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #6aa84f;
+    }
+
+    .language-switch a:hover {
+      text-decoration: underline;
     }
 
     .footer {
@@ -98,16 +111,94 @@
         width: 100%;
         margin: 10px 0;
       }
+      .language-switch {
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
+
+    <!-- Language switch -->
+    <div class="language-switch">
+      <a href="#pt" onclick="showPT()">PT</a> | 
+      <a href="#en" onclick="showEN()">EN</a>
+    </div>
+
+    <!-- Contact info always visible -->
+    <div class="contact">
+      <p>Telefone: <a href="tel:+351938614699">938 614 699</a></p>
+      <p>Email: <a href="mailto:berna_q@hotmail.com">berna_q@hotmail.com</a></p>
+    </div>
+
     <!-- Foto -->
     <img src="foto.jpg" alt="Foto do terapeuta" class="profile-photo">
 
-    <!-- Hero -->
-    <h1>Relaxa.<br>Há tempo e espaço.</h1>
+    <!-- Portuguese version -->
+    <div id="pt" class="lang">
+      <h1>Relaxa.<br>Há tempo e espaço.</h1>
 
-    <!-- Botões principais -->
-    <
+      <div class="buttons">
+        <a class="button" href="https://calendly.com/florestarica/30min" target="_blank">Marcar sessão presencial</a>
+        <a class="button" href="https://calendly.com/florestarica/sessao-online-com-baguicha" target="_blank">Marcar sessão online</a>
+      </div>
+
+      <p>Sessões simples.<br>Conversa, silêncio, presença.</p>
+
+      <div class="sessions">
+        <p>Sessão de avaliação — criança <strong>50 €</strong> Contactar</p>
+        <p>Pacote criança — 4 sessões / 1 mês <strong>180 €</strong> Contactar</p>
+      </div>
+
+      <div class="disclaimer">
+        <p>Formação em Psicologia (Mestrado — Universidade do Porto).<br>
+        Este trabalho não é psicologia clínica nem substitui acompanhamento médico ou psicológico formal.</p>
+      </div>
+
+      <div class="footer">
+        <p>Estarei aqui.</p>
+      </div>
+    </div>
+
+    <!-- English version -->
+    <div id="en" class="lang" style="display:none;">
+      <h1>Relax.<br>There is time and space.</h1>
+
+      <div class="buttons">
+        <a class="button" href="https://calendly.com/florestarica/30min" target="_blank">Book in-person session</a>
+        <a class="button" href="https://calendly.com/florestarica/sessao-online-com-baguicha" target="_blank">Book online session</a>
+      </div>
+
+      <p>Simple sessions.<br>Conversation, silence, presence.</p>
+
+      <div class="sessions">
+        <p>Child assessment session <strong>50 €</strong> Contact</p>
+        <p>Child package — 4 sessions / 1 month <strong>180 €</strong> Contact</p>
+      </div>
+
+      <div class="disclaimer">
+        <p>Psychology degree (Master — University of Porto).<br>
+        This work is not clinical psychology and does not replace medical or psychological care.</p>
+      </div>
+
+      <div class="footer">
+        <p>I will be here.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showPT() {
+      document.getElementById('pt').style.display = 'block';
+      document.getElementById('en').style.display = 'none';
+    }
+    function showEN() {
+      document.getElementById('pt').style.display = 'none';
+      document.getElementById('en').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
